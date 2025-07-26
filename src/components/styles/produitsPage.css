@@ -1,0 +1,86 @@
+.categories {
+  position: fixed;
+  top: auto;
+  left: 0;
+  width: 100%;
+  height: 40px;
+    background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  border-radius: 20px;
+  padding: 0.2rem;
+  margin-top: 1rem; /* selon la hauteur de ton header */
+}
+
+.categories button {
+  width: 200px;
+  height: fit-content;
+  padding: 0.2rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-wrap: nowrap;
+  opacity: 1;
+  border-bottom: 4px solid gray;
+  transition: all 2ms ease;
+}
+button.selectionné {
+  border-bottom: 4px solid rgb(230, 213, 213);
+}
+.categorie {
+  margin-top: 3rem;
+  width: 60%;
+}
+.categorie h1 {
+  font-weight: bold;
+}
+.categorie > h1 {
+  margin: 1rem;
+}
+.produits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  column-gap: 2rem;
+  justify-items: center;
+  align-content: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 769px) and (max-width: 1224px) {
+  .categories {
+    width: 100%;
+  }
+  .categorie {
+    width: 100%;
+  }
+  .produits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .categories {
+    width: 98%;
+    overflow: auto;
+    border-radius: 0 !important;
+  }
+  .categories button {
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  .categorie {
+    width: 98%;
+  }
+  .produits {
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+}

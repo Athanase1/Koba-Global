@@ -1,0 +1,72 @@
+.pcarte {
+  width:auto;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height:350px;
+  padding: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 20px;
+  gap: 1rem;
+  min-width: 250px;
+}
+.carteCorps{
+ flex-grow: 1;
+ justify-content: space-around;
+ display: flex;
+ flex-direction: column;
+}
+
+.pcarte img {
+  height:200px;
+  width:200px;
+  max-width: 100%;
+}
+.nomEtprix {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: column;
+}
+.nomEtprix h1 {
+  font-size: 1rem;
+}
+#nom {
+  width: 90%;
+  text-overflow: ellipsis;
+  text-wrap: wrap;
+  font-size: .75rem;
+}
+#prix {
+  font-size: 0.75rem;
+  margin-left: 1rem;
+  text-wrap: nowrap;
+}
+
+
+.pcarte button {
+  background-color: green;
+  height: fit-content;
+  width:200px;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 20px;
+}
+.pcarte button:hover{
+  opacity: .5rem;
+  background-color: black;
+  color: green;
+}
+@media screen and (max-width:768px){
+  .pcarte button{
+    width: 150px;
+    border-radius: 0;
+  }
+ 
+}
+
