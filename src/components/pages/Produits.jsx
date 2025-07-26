@@ -3,7 +3,6 @@ import "../styles/produitsPage.css";
 import { Produits } from "../../assets/data/produit";
 import ProduitCarte from "../produitCarte/produitCarte";
 import { useEffect, useRef, useState } from "react";
-import CarteArticle from "../carteArticle/pageArticle";
 import { useNavigate } from "react-router-dom";
 
 export default function Produit() {

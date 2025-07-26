@@ -46,6 +46,13 @@ export default function PanierProvider({ children }) {
         .filter((a) => a.qte > 0)
     );
   };
+  const modifierQuantite = (id, qte) => {
+  const updated = articles.map((article) =>
+    article.id === id ? { ...article, qte } : article
+  );
+  setArticles(updated);
+  localStorage.setItem("panier", JSON.stringify(updated));
+};
 
   const viderPanier = () => {
     setArticles([]);
@@ -59,6 +66,7 @@ export default function PanierProvider({ children }) {
     ajouterAuPanier,
     retirerDuPanier,
     viderPanier,
+    modifierQuantite,
     total,
   };
 

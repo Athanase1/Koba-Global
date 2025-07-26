@@ -56,6 +56,7 @@
   cursor: pointer;
   font-weight: bold;
   border-radius: 20px;
+  color: black;
 }
 .pcarte button:hover{
   opacity: .5rem;
