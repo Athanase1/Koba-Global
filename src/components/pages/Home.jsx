@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { Produits } from "../../assets/data/produit";
-import ProduitCarte from "../produitCarte/produitCarte";
 import "../styles/styles.css";
+import Produit from "./Produits";
+import Logo from "../../assets/images/Smash/Logo.png"
+import { useState } from "react";
 export default function Home() {
     const navigate = useNavigate()
-    const handleClick = (a) =>{
-      navigate(`/articles/${a.id}`)
-    }
+    const [afficheContact, setContact] = useState(false)
   return (
     <div className="container">
       <div className="intro">
@@ -18,30 +18,31 @@ export default function Home() {
           lac Tanganyika, réputée pour la richesse et la qualité de ses
           ressources. Nous desservons les épiceries africaines partout au Québec
           et en Ontario.{" "}
-          <b>
-            <a className="a" href="">
+          <b onClick={() =>{
+            setContact(!afficheContact)
+          }}>
               Nous contacter.
-            </a>
           </b>
         </p>
+       {afficheContact && <div className="contact">
+
+          <h1>Tel: 581-578-4549</h1>
+          <h1>Email: Distributionskobaglobainc@gmail.com</h1>
+            <div className="logo">
+                  <img
+                    onClick={() => {
+                      navigate("/");
+                    }}
+                    id="Logo"
+                    src={Logo}
+                    alt="Logo de distribuctions kobal global"
+                  />
+                </div>
+        </div>}
       </div>
 
       <div className="section-produits">
-        <div className="entete">
-          <h1 id="nPd">Nos produits principaux</h1>
-          <h1 onClick={() =>{
-            navigate("/produits")
-          }}>
-           Tous <i className="bi bi-plus"></i>
-          </h1>
-        </div>
-        <div className="produits-container">
-          {Produits.map((p) => (
-            <ProduitCarte data={p} key={p.id} onClick={() =>{
-              handleClick(p)
-            }} value={2}/>
-          ))}
-        </div>
+      <Produit champCategore={true} produitsliste={Produits}/>
       </div>
     </div>
   );

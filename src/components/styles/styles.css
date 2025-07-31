@@ -19,10 +19,21 @@
   font-size: 1rem;
   color: gray;
 }
+b{
+  font-size: 0.8rem;
+  text-decoration: underline;
+  color: gray;
+  cursor: pointer;
+}
 .intro {
   max-width: 100%;
   padding: 1rem;
-  width: 50%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.5s ease;
 }
 .intro p {
   text-align: justify;
@@ -31,6 +42,7 @@
   font-size: 1.2rem;
   line-height: 0.9;
   margin: 5rem;
+  width: 50%;
 }
 /* section-produits*/
 .section-produits {
@@ -39,8 +51,8 @@
   justify-content: center;
   align-items: center;
   max-width: 100%;
-
-  width: 60%;
+  padding-top: 1rem;
+  width: 100%;
 }
 #nPd{
   font-size: 2rem;
@@ -81,6 +93,15 @@
 .intro p a {
   font-size: 0.6rem;
 }
+.contact{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.contact h1{
+  font-size: .95rem;
+  font-weight: bold;
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
   /* Styles pour tablette */
@@ -93,12 +114,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
   .intro p {
     font-size: 1rem;
+    width: 80%;
   }
   .section-produits {
-    width: 80%;
+    width: 100%;
   }
   .produits-container {
     width: 100%;
@@ -108,15 +131,25 @@
 @media (max-width: 768px) {
   /* Styles pour mobile */
   .intro {
-    width: 80%;
+    width: 90%;
+    flex-direction: column;
+    border-radius: 20px;
   }
   .intro p {
     font-size: 0.6rem;
     line-height: 1.3;
     margin: 1rem;
+    width: 90%;
   }
   .section-produits {
     width: 100%;
+  }
+  .contact{
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .contact h1{
+    font-size: .5rem;
   }
   .produits-container {
     display: flex;

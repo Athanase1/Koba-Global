@@ -1,63 +1,88 @@
-*{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 .PPanier {
+  width: 100%;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  height: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  font-family: 'Inter', 'Roboto', sans-serif;
 }
-
-.total {
+.PPanier img {
+  width: 50%;
+  height: 100%;
+}
+.ppanier-info {
+  width: 75%;
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
-  width: 100%;
-}
-#pNomProduit{
-    font-size: .6rem;
-}
-
-.sectionqte {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
 }
-.sectionqte i {
-  font-size: 0.8rem !important;
-}
-
-.sectionqte input {
-  width: 50px;
-  text-align: center;
-}
-#btnRetrait {
-  background: none;
-  border: 0;
-  outline: 2px solid green;
-  width: fit-content;
-  text-wrap: nowrap;
-  height: fit-content;
-  padding: 0.4rem;
+.ppanier-info h2{
+  font-size: .85rem;
   color: black;
 }
-#btnRetrait:hover {
+.ppanier-qte{
+  width: fit-content;
+  display: flex;
+  overflow: hidden;
+}
+.ppanier-qte input{
+  width: 40px;
+  text-align:center;
+  border: none;
+}
+.ppanier-remove{
+  border: none;
+  background: none;
   outline: 2px solid red;
+  width: 90%;
+  padding: .2rem;
+}
+.ppanier-remove:hover{
+  background-color: red;
+}
+@media screen and (min-width: 769px) and (max-width:1224px) {
+  .ppanier-info h2{
+    font-size: .6rem;
+  }
+}
+@media screen and (max-width:768px){
+  .ppanier-remove{
+    width: fit-content;
+    padding: .2rem;
+    border-radius: 20px;
+  }
+ 
+  .ppanier-info h2{
+    font-size: 18px;
+  }
+  .PPanier p{
+    font-size: 20px;
+  }
 }
 @media screen and (max-width:500px) {
-#btnRetrait{
-    width: fit-content !important;
-    font-size: .5rem !important;
-    outline: 0;
-    color: red;
+  .PPanier{
+    flex-direction: column;
+    height: 400px;
+    min-width: fit-content;
   }
-  #btnRetrait:hover{
-    background-color: gray;
+  .PPanier img{
+    height: 55%;
+    width: 100%;
   }
-  #pNomProduit{
-     font-size: .5rem !important;
-     font-weight: bold;
+  .ppanier-info h2{
+    font-size: 10px;
+  }
+   .PPanier p{
+    font-size: 10px;
+  }
+  .ppanier-remove{
+    font-size: 10px;
   }
 }
+
+

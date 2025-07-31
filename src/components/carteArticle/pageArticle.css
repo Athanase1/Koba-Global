@@ -24,7 +24,7 @@
 }
 .articleImg img {
   width: 500px;
-  height: 500px;
+  height: 450px;
 }
 .details {
   display: flex;
@@ -121,6 +121,7 @@ label {
   cursor: pointer;
   font-weight: bold;
   border-radius: 20px;
+  color: black;
 }
 #btnAjouterPanier:hover {
   opacity: 0.5rem;

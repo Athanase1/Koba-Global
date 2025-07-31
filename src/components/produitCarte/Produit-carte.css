@@ -1,11 +1,11 @@
 .pcarte {
-  width:auto;
+  width:250px;
   max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  height:350px;
+  height:fit-content;
   padding: 1rem;
   overflow: hidden;
   cursor: pointer;
@@ -28,7 +28,7 @@
 .nomEtprix {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   flex-direction: column;
 }

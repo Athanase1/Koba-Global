@@ -1,99 +1,136 @@
 import "../styles/styles.css";
 import "../styles/produitsPage.css";
-import { Produits } from "../../assets/data/produit";
+
 import ProduitCarte from "../produitCarte/produitCarte";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Produit() {
+export default function Produit({ champCategore, produitsliste }) {
   const navigate = useNavigate();
-  const [categorie, setCategorie] = useState("tous");
-  const refs = {
-    tous: useRef(null),
-    poisson: useRef(null),
-    condiment: useRef(null),
-    legume: useRef(null),
-    autres: useRef(null),
-  };
-
-  // Scroll manuel
-  const scrollToCategorie = (cat) => {
-    refs[cat]?.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  // Observer pour changer la catégorie selon la visibilité
+  const [filtres, setFiltre] = useState({
+    prixMin: "26",
+    prixMax: "1000",
+    categorie: "poisson",
+  });
+  const [produits, setProduits] = useState([]);
+  const [afficheFiltre, setAfficheFiltre] = useState(false);
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.find((entry) => entry.isIntersecting);
-        if (visible) {
-          const id = visible.target.getAttribute("data-categorie");
-          setCategorie(id);
-        }
-      },
-      {
-        threshold: 0.5, // 50% visible
-      }
-    );
+    if (produitsliste) {
+      setProduits(produitsliste);
+    }
+  }, [produitsliste]); // ← écouter les changements ici
 
-    Object.entries(refs).forEach(([key, ref]) => {
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
-    });
-
-    return () => observer.disconnect();
-  }, []);
   const handleClick = (a) => {
     navigate(`/articles/${a.id}`);
   };
 
+  const gererChangement = (e) => {
+    const { name, value } = e.target;
+    setFiltre((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const filtrerProduit = () => {
+    let minPrix = parseFloat(filtres.prixMin);
+    let maxPrix = parseFloat(filtres.prixMax);
+
+    // Valeurs par défaut si les champs sont vides ou invalides
+    if (isNaN(minPrix)) minPrix = 0;
+    if (isNaN(maxPrix)) maxPrix = Infinity;
+
+    const resultat = produits.filter((produit) => {
+      const estDansRangePrix =
+        produit.prix >= minPrix && produit.prix <= maxPrix;
+
+      const correspondCategorie =
+        !filtres.categorie ||
+        produit.categorie
+          .toLowerCase()
+          .includes(filtres.categorie.toLowerCase());
+
+      return estDansRangePrix && correspondCategorie;
+    });
+
+    setProduits(resultat);
+    setAfficheFiltre(!afficheFiltre)
+  };
   return (
-    <div className="container">
+    <div className="PPageContainer">
       <div className="categories">
-        {["tous", "poisson", "condiment", "legume", "autres"].map((cat) => (
-          <button
-            key={cat}
-            onClick={() => scrollToCategorie(cat)}
-            className={categorie === cat ? "selectionné" : ""}
+        {  produits.length > 0 &&  <div className="filtre">
+          <div
+            className="catEtBi"
+            onClick={() => {
+              setAfficheFiltre(!afficheFiltre);
+            }}
           >
-            {cat === "legume"
-              ? "Légume sèches"
-              : cat.charAt(0).toUpperCase() + cat.slice(1)}
-          </button>
-        ))}
+            <h1>filtrer les produits</h1>
+            <i
+              className={afficheFiltre ? "bi-x" : "bi bi-sliders"}
+              id="biF"
+            ></i>
+          </div>
+
+      <div className={afficheFiltre ? "divFiltre" : "cacherFiltre"}>
+            <label htmlFor="prix">Prix min: 26$-100$</label>
+            <input
+              type="text"
+              name="prixMin"
+              value={filtres.prixMin}
+              onChange={gererChangement}
+            />
+            <label htmlFor="prix">Prix max: 26$-100$</label>
+            <input
+              type="text"
+              name="prixMax"
+              value={filtres.prixMax}
+              onChange={gererChangement}
+            />
+            {champCategore && (
+              <>
+                <label htmlFor="categorie">Catégorie</label>
+                <input
+                  type="text"
+                  name="categorie"
+                  value={filtres.categorie}
+                  onChange={gererChangement}
+                />
+              </>
+            )}
+            <div className="buttons">
+              <button type="button" id="btnFiltre" onClick={filtrerProduit}>
+                Appliquer
+              </button>
+              <button
+                onClick={() => {
+                  setFiltre({ prixMin: "", categorie: "", prixMax: "" });
+                  setProduits(produitsliste);
+                }}
+                id="btnRes"
+              >
+                Réinitialiser
+              </button>
+            </div>
+          </div>
+        </div>}
       </div>
 
       <div className="categorie">
-        <h1 ref={refs.tous} data-categorie="tous">
-          Tous
-        </h1>
-        <div className="produits">
-          {Produits.filter((p) => p.id < 4).map((p) => (
-            <ProduitCarte
-              data={p}
-              key={p.id}
-              onClick={() => {
-                handleClick(p)
-              }}
-            />
-          ))}
-        </div>
-
-        <h1 ref={refs.poisson} data-categorie="poisson">
-          Poissons
-        </h1>
-        <div className="produits">
-          {Produits.filter((p) => p.categorie === "poisson").map((p) => (
-            <ProduitCarte
-              data={p}
-              key={p.id}
-              onClick={() => {
-                handleClick(p);
-              }}
-            />
-          ))}
-        </div>
+        {produits.length > 0 ? (
+          <div className="produits">
+            {produits.map((p) => (
+              <ProduitCarte
+                data={p}
+                key={p.id}
+                onClick={() => handleClick(p)}
+              />
+            ))}
+          </div>
+        ) : (
+          <h1 id="h1Warning">Ces produits ne sont pas disponibles pour le momment.</h1>
+        )}
       </div>
     </div>
   );

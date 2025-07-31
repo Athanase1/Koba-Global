@@ -18,7 +18,8 @@ import mkebuka2 from "../images/Smash/mkebuka.png";
 
 export const Produits = [
   {
-    id: "A1B2C3",
+    id:1,
+    code: "P7Q8R9",
     nom: "NDAGAA  KAVU / KAPENTA SEC",
     prix: 40,
     unite: "1KG",
@@ -27,16 +28,18 @@ export const Produits = [
     categorie: "poisson",
   },
   {
-    id: "D4E5F6",
-    nom: "MKEBUKA KAVU ( POISSION FUME DU LAC TANGANYIKA )",
+    id:2,
+    code: "P7Q8R9",
+    nom: "MKEBUKA KAVU ( POISSON FUME DU LAC TANGANYIKA )",
     prix: 40,
     qte: 1,
     unite: "1KG",
-    img: [mkebukaKavu, mkebukaKavu2],
+    img: [ mkebukaKavu2,mkebukaKavu],
     categorie: "poisson",
   },
   {
-    id: "G7H8I9",
+    id:3,
+    code: "P7Q8R9",
     nom: "NYAMUNYAMU",
     prix: 50,
     unite: "2KG",
@@ -45,7 +48,8 @@ export const Produits = [
     categorie: "poisson",
   },
   {
-    id: "J1K2L3",
+    id:4,
+    code: "P7Q8R9",
     nom: "Dagala mbichi / KAPENTA FRAIS (Sardines frais)",
     prix: 27,
     unite: "1KG",
@@ -54,7 +58,8 @@ export const Produits = [
     categorie: "poisson",
   },
   {
-    id: "M4N5O6",
+    id:5,
+    code: "P7Q8R9",
     nom: "MAKAYABU FUME OU SALLÉ",
     prix: 27,
     unite: "1KG",
@@ -63,7 +68,8 @@ export const Produits = [
     categorie: "poisson",
   },
   {
-    id: "P7Q8R9",
+    id:6,
+    code: "P7Q8R9",
     nom: "MKEBUKA MBICHI (CAPITAINE DU TANGANYIKA )",
     prix: 55,
     unite: "2KG",
