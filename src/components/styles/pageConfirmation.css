@@ -1,0 +1,81 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+  color: #333;
+}
+
+.montant {
+ display: flex;
+ width: 90%;
+ justify-content: space-evenly;
+ align-items: center;
+}
+
+.info-contact {
+  margin-top: 3rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.info-contact h1 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+.info-contact span{
+    color: gray;
+    font-size: 10px;
+    text-decoration: underline;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.btns button {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: green;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+.btns button:hover {
+  background-color: black;
+  color: green;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  table, .btns {
+    font-size: 0.9rem;
+  }
+
+  .btns {
+    flex-direction: column;
+  }
+}

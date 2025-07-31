@@ -1,0 +1,149 @@
+footer {
+  grid-area: footer;
+  color: #333333;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hide{
+    display: none;
+}
+#footer {
+    background-color: #F0FFF0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-content: center;
+    justify-items: center;
+    padding: 1rem;
+}
+.linksContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: height .5s ease;
+}
+.link-header{
+  width: 100%;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+.link-header h1{
+  font-size: 16px;
+}
+#Ful{
+  list-style: none;
+
+  flex-wrap: wrap;
+  column-gap: .5rem;
+}
+
+#Ful li{
+  cursor: pointer;
+}
+#Ful li:hover{
+  color: gray;
+}
+#contact{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+}
+#h1C{
+  font-size: 14px;
+}
+#contact a{
+  text-wrap: nowrap;
+  font-size: 14px;
+}
+.info-lettreContainer{
+    width: 300px;
+    height: fit-content;
+    background-color: white;
+    padding: 1rem;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-top-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+}
+.info-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: 100%;
+   
+    border-radius: 20px;
+    padding: .5rem;
+    overflow: hidden;
+}
+.info-input input{
+    width: 60%;
+   border: none;
+    border-top-left-radius: 10px;
+    height: 40px;
+   text-align: left;
+   background-color: gainsboro;
+   font-size: 10px;
+}
+#elabel{
+    font-size: 10px;
+    color: red;
+}
+.info-input button{
+    background-color: green;
+    color: black;
+    font-weight: 400;
+    border-bottom-right-radius: 10px;
+    font-size: 14px;
+   height: 40px;
+   width: 40%;
+   z-index: 1;
+}
+.info-lettreContainer h1{
+    font-size: 14px;
+}
+@media screen and (min-width:769px) and (max-width:1224px){
+   #footer{
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+   } 
+}
+@media screen and (max-width:768px){
+  .link-header{
+    display: flex;
+    width: 100%;
+    font-size: 12px;
+  }
+  #footer{
+   grid-template-columns: 1fr;
+   grid-template-rows: auto;
+  }
+  .info-lettreContainer{
+    width: 100%;
+    box-shadow: none;
+  }
+  .linksContainer{
+    width: 100%;
+    padding: 1rem;
+    align-items: flex-start;
+  }
+  #Ful li{
+    font-size: 10px;
+  }
+  #contact a{
+    font-size: 10px;
+  }
+  .copy{
+    font-size: 10px;
+  }
+}

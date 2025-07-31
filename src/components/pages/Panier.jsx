@@ -35,8 +35,7 @@ export default function Panier() {
     const erreursTrouvées = validerForm(champs);
     setErreurs(erreursTrouvées);
     if (Object.keys(erreursTrouvées).length === 0) {
-      alert("Formulaire envoyé avec succès !");
-      // ici tu peux envoyer le formulaire par API ou autre logique
+      navigate("/confirmation/champs", {state: champs});
     } else {
       alert("Veuillez corriger les erreurs.");
     }
@@ -140,11 +139,11 @@ export default function Panier() {
                 type="text"
                 className="form-control "
                 name="addresse"
-                id="adresse"
+                id="addresse"
                 value={champs.addresse}
                 onChange={gererChangement}
               />
-              <label htmlFor="adresse">
+              <label htmlFor="addresse">
                 Adresse : <span>{erreurs.addresse}</span>
               </label>
             </div>

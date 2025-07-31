@@ -47,7 +47,7 @@ export default function PageArticle({}) {
   const ajouterAuPanier = async (p) => {
     setTransaction(true);
     const res = await panierContext.ajouterAuPanier(p);
-    setTimeout(() => setTransaction(false),setQte(1), 1000);
+    setTimeout(() => setTransaction(false), setQte(1), 1000);
   };
   const handleClick = (a) => {
     navigate(`/articles/${a.id}`);
@@ -89,7 +89,7 @@ export default function PageArticle({}) {
           <div className="Ptemporaire">
             <div className="div">
               {panierContext.articles.map((p) => (
-                <h1 id="pNom">
+                <h1 id="pNom" key={p.id}>
                   Nom: {p.nom} qte: {p.qte}
                 </h1>
               ))}
@@ -110,13 +110,11 @@ export default function PageArticle({}) {
         {Produits.filter(
           (p) =>
             String(p.id) !== String(id) && p.categorie === String(p.categorie)
-        ).map((p) => (
+        ).map((p, index) => (
           <ProduitCarte
-            key={p.id}
+            key={`produit-${index}`} // fallback au cas où p.id est manquant
             data={p}
-            onClick={() => {
-              handleClick(p);
-            }}
+            onClick={() => handleClick(p)}
           />
         ))}
       </div>

@@ -1,19 +1,25 @@
 .PPanier {
   width: 100%;
-  height: 250px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   font-family: 'Inter', 'Roboto', sans-serif;
+  padding: 1rem;
 }
-.PPanier img {
-  width: 50%;
+.ppimage{
+  width: 30%;
   height: 100%;
+  overflow: hidden;
+}
+.ppimage img{
+  width: 100%;
+  height: auto;
 }
 .ppanier-info {
-  width: 75%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,12 +44,14 @@
 .ppanier-remove{
   border: none;
   background: none;
-  outline: 2px solid red;
-  width: 90%;
+  outline: 2px solid green;
+  width: 50%;
   padding: .2rem;
+  border-radius: 20px;
 }
 .ppanier-remove:hover{
   background-color: red;
+  outline: 2px solid red;
 }
 @media screen and (min-width: 769px) and (max-width:1224px) {
   .ppanier-info h2{
@@ -67,13 +75,22 @@
 @media screen and (max-width:500px) {
   .PPanier{
     flex-direction: column;
-    height: 400px;
-    min-width: fit-content;
+    height: 300px;
+    min-width: 200px;
   }
-  .PPanier img{
-    height: 55%;
-    width: 100%;
-  }
+ .ppimage{
+  width: 100%;
+  height: 60%;
+ }
+ .ppimage img{
+  width: 100%;
+  height: auto;
+ }
+ .ppanier-info{
+  flex-grow: 1;
+  height: 20%;
+  background: transparent;
+ }
   .ppanier-info h2{
     font-size: 10px;
   }

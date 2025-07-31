@@ -10,7 +10,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: 60vh;
   height: fit-content;
   align-content: center;
   justify-items: center;
@@ -23,15 +23,16 @@
   overflow: hidden;
 }
 .articleImg img {
-  width: 500px;
-  height: 450px;
+  width: 100%;
+  height: auto;
 }
 .details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   position: relative;
+  width: 100%;
 }
 .Ptemporaire {
   position: absolute;
@@ -79,7 +80,7 @@
   color: white;
 }
 #nom {
-  width: 90%;
+
   text-overflow: ellipsis;
   text-wrap: wrap;
   font-size: 0.75rem;

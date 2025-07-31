@@ -31,10 +31,10 @@ export function validerForm(champs){
   } else if (!validerEmail(champs.email)) {
     erreurs.email = "Format d'email invalide";
   }
-    if(!champs.adresse){
-    erreurs.adressse = "Champ obligatoire"
+    if(!champs.addresse){
+    erreurs.addresse = "Champ obligatoire"
   } else if(!validerText(champs.addresse)){
-    erreurs.adressse = "Addresse invalide"
+    erreurs.addresse = "Addresse invalide"
   }
   return erreurs;
 }

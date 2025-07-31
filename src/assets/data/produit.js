@@ -34,7 +34,7 @@ export const Produits = [
     prix: 40,
     qte: 1,
     unite: "1KG",
-    img: [ mkebukaKavu2,mkebukaKavu],
+    img: [mkebukaKavu,mkebukaKavu2],
     categorie: "poisson",
   },
   {
