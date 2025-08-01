@@ -48,6 +48,7 @@
   width: 50%;
   padding: .2rem;
   border-radius: 20px;
+  color: black;
 }
 .ppanier-remove:hover{
   background-color: red;

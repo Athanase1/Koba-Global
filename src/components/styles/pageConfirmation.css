@@ -23,6 +23,7 @@ th {
  width: 90%;
  justify-content: space-evenly;
  align-items: center;
+ 
 }
 
 .info-contact {
@@ -31,6 +32,10 @@ th {
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .info-contact h1 {
@@ -54,7 +59,7 @@ th {
 .btns button {
   flex: 1;
   padding: 1rem;
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: bold;
   background-color: green;
   color: black;
@@ -62,6 +67,7 @@ th {
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.5s ease;
+  text-wrap: nowrap;
 }
 
 .btns button:hover {
@@ -72,10 +78,13 @@ th {
 /* Responsive */
 @media (max-width: 768px) {
   table, .btns {
-    font-size: 0.9rem;
+    font-size:10px;
   }
 
   .btns {
     flex-direction: column;
+  }
+  .montant h1{
+    font-size: 16px !important;
   }
 }

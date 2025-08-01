@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import axios from "axios";
 
 export const PanierContext = createContext({
   panierPasVide: false,
@@ -6,6 +7,7 @@ export const PanierContext = createContext({
   ajouterAuPanier: () => {},
   retirerDuPanier: () => {},
   viderPanier: () => {},
+  envoyerCommande: () => {},
   total: 0
 });
 
@@ -57,6 +59,17 @@ export default function PanierProvider({ children }) {
   const viderPanier = () => {
     setArticles([]);
   };
+  const envoyerCommande = async (infosClient, produits, total) =>{
+    try {
+      const res = await axios.post("https://koba-global-backend.onrender.com/commande/",
+        {infosClient,produits,total}
+      )
+      return {success: true};
+    } catch (error) {
+      const message = error?.response?.data?.message || "Information invalide";
+      return {success:false, message}
+    }
+  }
 
   const total = articles.reduce((somme, a) => somme + a.qte * a.prix, 0);
 
@@ -67,6 +80,7 @@ export default function PanierProvider({ children }) {
     retirerDuPanier,
     viderPanier,
     modifierQuantite,
+    envoyerCommande,
     total,
   };
 
