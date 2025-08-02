@@ -61,10 +61,11 @@ export default function PanierProvider({ children }) {
   };
   const envoyerCommande = async (infosClient, produits, total) =>{
     try {
-      const res = await axios.post("http://localhost:5000/",
+      const res = await axios.post("https://koba-global-backend.onrender.com/commande",
         {infosClient,produits,total}
       )
-      return {success: true};
+      const message = res?.data?.message
+      return {success: true, message};
     } catch (error) {
       const message = error?.response?.data?.message || "Information invalide";
       return {success:false, message}

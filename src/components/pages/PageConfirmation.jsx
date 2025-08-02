@@ -11,21 +11,40 @@ export default function PageConfirmation() {
   const [chargement, setChargement] = useState(false);
   const navigate = useNavigate();
   const envoyerCommande = async () => {
-    setChargement(true);
-    const res = panierContext.envoyerCommande(
-      champs,
-      panierContext.articles,
-      panierContext.total
+    const accord = confirm(
+      "Voulez-vous envoyer cette commande à Distributions Koba Inc ?"
     );
-    setTimeout(() => setChargement(false), 1000);
-    if (res.success) {
-      alert(
-        "Commande envoyée avec succèss vous. Un email de confirmation vous a été envoyé"
+    if (!accord) return;
+
+    try {
+      setChargement(true);
+
+      const res = await panierContext.envoyerCommande(
+        champs,
+        panierContext.articles,
+        panierContext.total
       );
-      panierContext.viderPanier();
-      navigate("/");
+
+      if (res.success) {
+        alert(
+          res.message ||
+            "Commande envoyée avec succès. Un email de confirmation vous a été envoyé."
+        );
+        panierContext.viderPanier();
+        navigate("/");
+      } else {
+        alert(
+          "Erreur : " + (res.message || "Une erreur inconnue est survenue.")
+        );
+      }
+    } catch (err) {
+      alert("Une erreur technique est survenue.");
+      console.error("Erreur lors de l'envoi de la commande :", err);
+    } finally {
+      setChargement(false); // toujours exécuté même en cas d’erreur
     }
   };
+
   if (chargement) {
     return <LoadingScreen />;
   }
