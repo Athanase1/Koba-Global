@@ -14,7 +14,7 @@ export default function PageConfirmation() {
     setChargement(true);
     const res = panierContext.envoyerCommande(
       champs,
-      produits,
+      panierContext.articles,
       panierContext.total
     );
     setTimeout(() => setChargement(false), 1000);
