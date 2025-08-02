@@ -62,7 +62,9 @@ export default function PanierProvider({ children }) {
   const envoyerCommande = async (infosClient, produits, total) =>{
     try {
       const res = await axios.post("https://koba-global-backend.onrender.com/commande",
-        {infosClient,produits,total}
+       //const res = await axios.post("http://localhost:5000/commande",
+        {infosClient,produits,total},
+        { headers: { "Content-Type": "application/json" } }
       )
       const message = res?.data?.message
       return {success: true, message};
