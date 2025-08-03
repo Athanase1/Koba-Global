@@ -18,16 +18,14 @@ export default function PPanier({
       </div>
 
       <div className="ppanier-info">
-        <h2>{produit.nom}</h2>
-
-        <div className="ppanier-qte">
+        <div className="NometButton">
+          <h2>{produit.nom}</h2>
+           <div className="ppanier-qte">
           <i className="bi bi-dash-circle" onClick={déincrementerQte}></i>
           <input type="number" value={qte} onChange={handleChange} />
           <i className="bi bi-plus-circle" onClick={incrementerQte}></i>
         </div>
-
-        <p className="ppanier-total">{produit.prix}$</p>
-
+        </div>
         <button className="ppanier-remove" onClick={onClick}>
           Retirer
         </button>

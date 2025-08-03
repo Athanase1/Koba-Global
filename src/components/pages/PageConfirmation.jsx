@@ -21,8 +21,8 @@ export default function PageConfirmation() {
 
       const res = await panierContext.envoyerCommande(
         champs,
-        panierContext.articles,
-        panierContext.total
+        panierContext.articles
+       
       );
 
       if (res.success) {
@@ -56,7 +56,6 @@ export default function PageConfirmation() {
           <tr>
             <th>Nom</th>
             <th>Quantité</th>
-            <th>Prix unitaire ($)</th>
           </tr>
         </thead>
         <tbody>
@@ -64,15 +63,11 @@ export default function PageConfirmation() {
             <tr key={index}>
               <td>{produit.nom}</td>
               <td>{produit.qte}</td>
-              <td>{produit.prix.toFixed(2)}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <div className="montant">
-        <h1>Sous-Total:</h1>
-        <h1>{panierContext.total.toFixed(2)}$</h1>
-      </div>
+   
       <div className="info-contact">
         <h1>Contact:</h1>
         <h1>

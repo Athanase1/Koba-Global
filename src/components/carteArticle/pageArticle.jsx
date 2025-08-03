@@ -64,9 +64,7 @@ export default function PageArticle({}) {
         <div className="details">
           <div className="nomEtprix2">
             <h1 id="nom">{article.nom}</h1>
-            <h1 id="prix">
-              {article.prix}$ / {article.unite}
-            </h1>
+         
             <div className="sectionInput">
               <div className="input">
                 <i className="bi bi-dash-circle" onClick={déincrementerQte}></i>
@@ -82,7 +80,7 @@ export default function PageArticle({}) {
               ajouterAuPanier({ ...article, qte });
             }}
           >
-            Ajouter au panier ({total.toFixed(2)} $)
+            Ajouter au panier
           </button>
         </div>
         {panierContext.panierPasVide && (
@@ -99,7 +97,7 @@ export default function PageArticle({}) {
                 navigate("/panier");
               }}
             >
-              voir le panier {panierContext.total.toFixed(2)} $
+              voir le panier 
             </button>
           </div>
         )}

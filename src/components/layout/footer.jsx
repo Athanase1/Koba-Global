@@ -26,7 +26,7 @@ export default function Footer({}) {
     <footer>
       <div id="footer">
         <div className="info-lettreContainer">
-          <h1>incrivez-vous à nos infolettres:</h1>
+          <h1>Inscrivez-vous à nos infolettres:</h1>
           <div className="info-input">
             <label id="elabel" htmlFor="email">{erreur}</label>
             <input
@@ -56,17 +56,18 @@ export default function Footer({}) {
             ></i>
           </div>
           <ul id="Ful" className={afficheLink ? "" : "hide"}>
-            <li onClick={() => navigate("/")}>home</li>
-            <li onClick={() => handleNav("poisson")}>poissons</li>
-            <li onClick={() => handleNav("légumes")}>légumes</li>
-            <li onClick={() => handleNav("condiment")}>condiments</li>
-            <li onClick={() => handleNav("autres")}>autres</li>
+            <li onClick={() => navigate("/")}>Accueil</li>
+            <li onClick={() => handleNav("poisson")}>Poissons</li>
+            <li onClick={() => handleNav("légumes")}>Légumes</li>
+            <li onClick={() => handleNav("condiment")}>Condiments</li>
+            <li onClick={() => handleNav("autres")}>Autres</li>
           </ul>
         </div>
       </div>
       <p className="copy">
         Koba-Global Inc. &copy; {currentYear} — Tous droits réservés
       </p>
+      <p style={{fontSize:"10px"}}>Site par <span style={{color:"gray", fontSmooth:"smooth", cursor:"pointer", textDecoration:"underline"}}>Athanase Kpan</span> &copy;</p>
     </footer>
   );
 }

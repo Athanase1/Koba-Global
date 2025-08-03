@@ -23,9 +23,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   height: 100%;
   padding: 1rem;
+}
+.NometButton{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 .ppanier-info h2{
   font-size: .85rem;
@@ -40,6 +46,9 @@
   width: 40px;
   text-align:center;
   border: none;
+}
+.ppanier-qte .bi:hover{
+  color: gray;
 }
 .ppanier-remove{
   border: none;
@@ -75,21 +84,19 @@
 }
 @media screen and (max-width:500px) {
   .PPanier{
-    flex-direction: column;
-    height: 300px;
     min-width: 200px;
   }
  .ppimage{
-  width: 100%;
-  height: 60%;
+
+  height: 100%;
  }
  .ppimage img{
   width: 100%;
   height: auto;
  }
  .ppanier-info{
-  flex-grow: 1;
-  height: 20%;
+
+  height: 100%;
   background: transparent;
  }
   .ppanier-info h2{

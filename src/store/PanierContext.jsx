@@ -59,17 +59,17 @@ export default function PanierProvider({ children }) {
   const viderPanier = () => {
     setArticles([]);
   };
-  const envoyerCommande = async (infosClient, produits, total) =>{
+  const envoyerCommande = async (infosClient, produits) =>{
     try {
       const res = await axios.post("https://koba-global-backend.onrender.com/commande",
        //const res = await axios.post("http://localhost:5000/commande",
-        {infosClient,produits,total},
-        { headers: { "Content-Type": "application/json" } }
+        {infosClient,produits},
+        { withCredentials: true }
       )
       const message = res?.data?.message
       return {success: true, message};
     } catch (error) {
-      const message = error?.response?.data?.message || "Information invalide";
+      const message = error?.response?.data?.message || "Tout est de notre fault! ressayez plus tard.";
       return {success:false, message}
     }
   }

@@ -113,10 +113,7 @@ export default function Panier() {
           ))}
          
         </div>
-         <div className="divTotal">
-            <h1>Sous-Total:</h1>
-            <h1>{panierContext.total}$</h1>
-          </div>
+        
         <div className="form">
           <h1 id="h1F">Entrez Vos coordonnées :</h1>
           <div className="InfoClients">

@@ -58,7 +58,6 @@ export default function Header({ gererNav, affiche }) {
           </ul>
         </nav>
         <div className="bis">
-          <i className="bi bi-search"></i>
           <div className="panier">
             <i
               className="bi bi-basket"
