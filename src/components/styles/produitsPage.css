@@ -172,6 +172,7 @@ button.selectionné {
     overflow: auto;
     flex-wrap: nowrap;
     scroll-behavior: smooth;
+    justify-content: flex-start;
     box-shadow: none;
     box-sizing: border-box;
     width: 100%;
