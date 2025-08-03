@@ -138,6 +138,7 @@ span{
   justify-items: center;
   align-content: center;
 }
+
 @media screen and (min-width: 769px) and (max-width: 1224px) {
   .PanierContainer {
     width: 100%;
@@ -168,8 +169,6 @@ span{
     width: 100%;
     max-width: 100%;
   }
- 
- 
   .panierVide {
     width: 100%;
   }
@@ -228,5 +227,4 @@ span{
     display: flex;
     overflow: auto;
   }
-  
 }

@@ -8,9 +8,8 @@
   grid-template-columns: auto 1fr;
   grid-template-rows: auto;
   justify-items: center;
-  align-content: start;
+  align-content: center;
   grid-template-areas: "categories categorie" "categories categorie";
-  
 }
 .categories {
   display: flex;
@@ -107,15 +106,12 @@ label{
   height: fit-content;
   padding: .2rem;
 }
-
-
 button.selectionné {
   border-bottom: 4px solid rgb(230, 213, 213);
 }
 .categorie {
   grid-area: categorie;
   overflow: auto;
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items:center;
@@ -127,12 +123,11 @@ button.selectionné {
 }
 
 .produits {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   column-gap: 2rem;
-  justify-items: center;
-  align-content: start;
   width: 100%;
   box-sizing: border-box;
 }
@@ -175,6 +170,7 @@ button.selectionné {
   .produits {
     display: flex;
     overflow: auto;
+    flex-wrap: nowrap;
     scroll-behavior: smooth;
     box-shadow: none;
     box-sizing: border-box;

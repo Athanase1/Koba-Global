@@ -19,14 +19,13 @@
   overflow: hidden;
 }
 .carteCorps{
-flex-grow: 1;
+  flex-grow: 1;
  justify-content: space-around;
  display: flex;
  height: 20%;
  flex-direction: column;
  align-items: center !important;
  width: 100%;
-
 }
 
 .pcarte img {

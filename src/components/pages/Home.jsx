@@ -40,7 +40,7 @@ export default function Home() {
                 </div>
         </div>}
       </div>
-
+        <h1>Nos produits principaux</h1>
       <div className="section-produits">
       <Produit champCategore={true} produitsliste={Produits}/>
       </div>

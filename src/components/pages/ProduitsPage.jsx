@@ -13,6 +13,7 @@ export default function ProduitsPage(){
     },[cat])
     return(
         <div className="container">
+            <h1 style={{width:"50%", textTransform:"uppercase", textAlign:"center"}}>{cat}:</h1>
             <Produit produitsliste={produits}/>
         </div>
     )

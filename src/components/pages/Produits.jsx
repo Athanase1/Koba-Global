@@ -58,65 +58,7 @@ export default function Produit({ champCategore, produitsliste }) {
   };
   return (
     <div className="PPageContainer">
-      <div className="categories">
-        {  produits.length > 0 &&  <div className="filtre">
-          <div
-            className="catEtBi"
-            onClick={() => {
-              setAfficheFiltre(!afficheFiltre);
-            }}
-          >
-            <h1>filtrer les produits</h1>
-            <i
-              className={afficheFiltre ? "bi-x" : "bi bi-sliders"}
-              id="biF"
-            ></i>
-          </div>
-
-      <div className={afficheFiltre ? "divFiltre" : "cacherFiltre"}>
-            <label htmlFor="prix">Prix min: 26$-100$</label>
-            <input
-              type="text"
-              name="prixMin"
-              value={filtres.prixMin}
-              onChange={gererChangement}
-            />
-            <label htmlFor="prix">Prix max: 26$-100$</label>
-            <input
-              type="text"
-              name="prixMax"
-              value={filtres.prixMax}
-              onChange={gererChangement}
-            />
-            {champCategore && (
-              <>
-                <label htmlFor="categorie">Catégorie</label>
-                <input
-                  type="text"
-                  name="categorie"
-                  value={filtres.categorie}
-                  onChange={gererChangement}
-                />
-              </>
-            )}
-            <div className="buttons">
-              <button type="button" id="btnFiltre" onClick={filtrerProduit}>
-                Appliquer
-              </button>
-              <button
-                onClick={() => {
-                  setFiltre({ prixMin: "", categorie: "", prixMax: "" });
-                  setProduits(produitsliste);
-                }}
-                id="btnRes"
-              >
-                Réinitialiser
-              </button>
-            </div>
-          </div>
-        </div>}
-      </div>
-
+      
       <div className="categorie">
         {produits.length > 0 ? (
           <div className="produits">

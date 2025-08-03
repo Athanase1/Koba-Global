@@ -67,7 +67,7 @@ export default function Footer({}) {
       <p className="copy">
         Koba-Global Inc. &copy; {currentYear} — Tous droits réservés
       </p>
-      <p style={{fontSize:"10px"}}>Site par <span style={{color:"gray", fontSmooth:"smooth", cursor:"pointer", textDecoration:"underline"}}>Athanase Kpan</span> &copy;</p>
+      <p style={{fontSize:"10px"}}>Site par:<span style={{color:"gray", fontSmooth:"smooth", cursor:"pointer", textDecoration:"underline", fontSize:"10px"}}>Athanase Kpan</span> &copy;</p>
     </footer>
   );
 }
