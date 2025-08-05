@@ -46,7 +46,7 @@ export default function PageConfirmation() {
   };
 
   if (chargement) {
-    return <LoadingScreen />;
+    return <LoadingScreen message="Envoie en cours ne quittez pas cette page..."/>;
   }
   return (
     <div className="container">
