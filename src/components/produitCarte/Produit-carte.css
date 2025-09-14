@@ -12,11 +12,15 @@
   border-radius: 20px;
   min-width: 250px;
   row-gap: .5rem;
+
 }
 .pImage{
   width: 100%;
-  height: 80% !important;
+  height: 60% !important;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .carteCorps{
   flex-grow: 1;
@@ -29,8 +33,8 @@
 }
 
 .pcarte img {
-  height:auto;
-  width:100%;
+  height:100%;
+  width:auto;
 }
 .nomEtprix {
   display: flex;

@@ -80,7 +80,7 @@ export default function PageArticle({}) {
               ajouterAuPanier({ ...article, qte });
             }}
           >
-            Ajouter au panier
+           Ajouter au panier {total}.00$
           </button>
         </div>
         {panierContext.panierPasVide && (

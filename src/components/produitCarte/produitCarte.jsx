@@ -8,8 +8,9 @@ export default function ProduitCarte({ onClick, data}) {
       <div className="carteCorps">
         <div className="nomEtprix">
           <h1>{data.nom}</h1>
+          <h1>{data.prix} / {data.unite}$</h1>
         </div>
-        <button onClick={onClick}>Commander</button>
+        <button onClick={onClick}>Commander {data.prix}.00$</button>
       </div>
     </div>
   );

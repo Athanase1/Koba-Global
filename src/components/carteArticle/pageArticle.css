@@ -16,6 +16,9 @@
   justify-items: center;
   margin-top: 2rem;
   column-gap: 1rem;
+  background-color: white;
+  border-radius: 20px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .articleImg {
   width: 100%;
@@ -133,6 +136,9 @@ label {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
+  background-color: white;
+  border-radius: 20px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 #As {
   font-weight: bold;

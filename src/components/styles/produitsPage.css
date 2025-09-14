@@ -123,13 +123,16 @@ button.selectionné {
 }
 
 .produits {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  column-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
   width: 100%;
-  box-sizing: border-box;
+  background-color: white;
+  align-content: center;
+  justify-items: center;
+  height: fit-content;
+  border-radius: 20px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 769px) and (max-width: 1224px) {
   .PPageContainer{
@@ -176,6 +179,7 @@ button.selectionné {
     box-shadow: none;
     box-sizing: border-box;
     width: 100%;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   .catEtBi{
     justify-content: space-around;
